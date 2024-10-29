@@ -24,7 +24,7 @@ async function convertWordToPdf() {
   const loader = document.getElementById("loaderWord");
   loader.style.display = "block"; // Show loader
 
-  const response = await fetch("/api/converter/word-to-pdf", {
+  const response = await fetch("/api/converter/word/pdf", {
     method: "POST",
     body: formData,
   });
@@ -57,11 +57,10 @@ async function convertPdfToWord() {
   const loader = document.getElementById("loaderPdf");
   loader.style.display = "block"; // Show loader
 
-  const response = await fetch("/api/converter/pdf-to-word", {
+  const response = await fetch("/api/converter/pdf/word", {
     method: "POST",
     body: formData,
   });
-
   if (response.ok) {
     const blob = await response.blob();
     const convertedFileName =
@@ -72,6 +71,8 @@ async function convertPdfToWord() {
     downloadButton.style.display = "inline";
     downloadButton.download = convertedFileName; // Set original name for download
     Swal.fire("Success", "PDF file converted successfully!", "success");
+  } else if (response.status == 413) {
+    Swal.fire("Error", "size issue", "error");
   } else {
     Swal.fire("Error", "Failed to convert file. Please try again.", "error");
   }
