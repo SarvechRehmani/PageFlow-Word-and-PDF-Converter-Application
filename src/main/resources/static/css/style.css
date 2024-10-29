@@ -6,6 +6,7 @@ body {
   color: #ffffff;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
   transition: background-color 0.5s, color 0.5s; /* Added transition */
 }
