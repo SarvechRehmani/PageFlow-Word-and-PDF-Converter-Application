@@ -94,13 +94,13 @@
 		<dependency>
 			<groupId>com.aspose</groupId>
 			<artifactId>aspose-pdf</artifactId>
-			<version>23.9</version> <!-- Replace with the latest version -->
+			<version>22.11</version> <!-- Replace with the latest version -->
 			<classifier>jdk17</classifier>
 		</dependency>
 		<dependency>
 			<groupId>com.aspose</groupId>
 			<artifactId>aspose-pdf</artifactId>
-			<version>23.9</version> <!-- Replace with the latest version -->
+			<version>22.11</version> <!-- Replace with the latest version -->
 			<classifier>javadoc</classifier>
 		</dependency>
 
@@ -114,13 +114,13 @@
 		<dependency>
 			<groupId>com.aspose</groupId>
 			<artifactId>aspose-words</artifactId>
-			<version>23.9</version>
+			<version>22.11</version>
 			<classifier>jdk17</classifier>
 		</dependency>
 		<dependency>
 			<groupId>com.aspose</groupId>
 			<artifactId>aspose-words</artifactId>
-			<version>23.9</version>
+			<version>22.11</version>
 			<classifier>javadoc</classifier>
 		</dependency>
 
