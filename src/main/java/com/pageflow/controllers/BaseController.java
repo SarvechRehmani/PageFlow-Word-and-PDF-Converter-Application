@@ -11,14 +11,5 @@ public class BaseController {
     public String home(){
         return "index.html";
     }
-
-    @GetMapping("/word-to-pdf")
-    public String wordToPDF(){
-        return "word2pdf.html";
-    }
-
-    @GetMapping("/pdf-to-word")
-    public String PDFToWord(){
-        return "pdf2word.html";
-    }
+    
 }
