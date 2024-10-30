@@ -27,13 +27,13 @@ public class WordConversionService {
     }
     // ADD MORE METHOD FOR WORD TO ANOTHER EXTENSION CONVERSION
 
-    public byte[] convertWordToHTML(MultipartFile file) throws IOException {
+    public byte[] convertWordToText(MultipartFile file) throws IOException {
         try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
             // Load the Word document from the input stream
             Document document = new Document(file.getInputStream());
 
-            // Save the document as HTML to the output stream
-            document.save(outputStream, SaveFormat.HTML);
+            // Save the document as PLAIN TEXT to the output stream
+            document.save(outputStream, SaveFormat.TEXT);
 
             return outputStream.toByteArray();
         } catch (Exception e) {

@@ -37,10 +37,10 @@ public class WordController {
         }
     }
 
-    @PostMapping("/html")
-    public ResponseEntity<byte[]> convertWordToHTML(@RequestParam("file") MultipartFile file) {
+    @PostMapping("/text")
+    public ResponseEntity<byte[]> convertWordToText(@RequestParam("file") MultipartFile file) {
         try {
-            byte[] pdfBytes = wordConversionService.convertWordToHTML(file);
+            byte[] pdfBytes = wordConversionService.convertWordToText(file);
             return ResponseEntity.ok()
                     .header("Content-Disposition", "attachment; filename=\"converted.html\"")
                     .body(pdfBytes);

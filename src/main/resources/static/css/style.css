@@ -70,7 +70,7 @@ button:hover {
 }
 #downloadButtonWord,
 #downloadButtonPdf,
-#downloadButtonWordHtml,
+#downloadButtonWordText,
 #downloadButtonWordJpeg,
 #downloadButtonPdfExcel,
 #downloadButtonPdfPPT {
@@ -85,7 +85,7 @@ button:hover {
 }
 #downloadButtonWord:hover,
 #downloadButtonPdf:hover,
-#downloadButtonWordHtml:hover,
+#downloadButtonWordText:hover,
 #downloadButtonWordJpeg:hover,
 #downloadButtonPdfExcel:hover,
 #downloadButtonPdfPPT:hover {

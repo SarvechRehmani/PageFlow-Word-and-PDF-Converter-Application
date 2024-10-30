@@ -84,7 +84,7 @@ async function convertPdfToWord() {
 
 // ---------------WORD TO HTML START------------------
 async function convertWordToHTML() {
-  const fileInput = document.getElementById("wordToHtmlFile");
+  const fileInput = document.getElementById("wordToTextFile");
   if (!fileInput.files.length) {
     Swal.fire("Error", "Please select a Word file first.", "error");
     return;
@@ -92,19 +92,19 @@ async function convertWordToHTML() {
 
   const formData = new FormData();
   formData.append("file", fileInput.files[0]);
-  const loader = document.getElementById("loaderWordHtml");
+  const loader = document.getElementById("loaderWordText");
   loader.style.display = "block"; // Show loader
 
-  const response = await fetch("/api/converter/word/html", {
+  const response = await fetch("/api/converter/word/text", {
     method: "POST",
     body: formData,
   });
   if (response.ok) {
     const blob = await response.blob();
     const convertedFileName =
-      fileInput.files[0].name.replace(/\.[^/.]+$/, "") + ".html"; // Retain original name
+      fileInput.files[0].name.replace(/\.[^/.]+$/, "") + ".txt"; // Retain original name
     const url = window.URL.createObjectURL(blob);
-    const downloadButton = document.getElementById("downloadButtonWordHtml");
+    const downloadButton = document.getElementById("downloadButtonWordText");
     downloadButton.href = url;
     downloadButton.style.display = "inline";
     downloadButton.download = convertedFileName; // Set original name for download
