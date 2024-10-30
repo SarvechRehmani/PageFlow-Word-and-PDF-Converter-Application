@@ -104,6 +104,11 @@ main {
   padding: 20px;
 }
 
+.note {
+  color: red;
+  margin-bottom: 0px;
+}
+
 /* Light Theme */
 .light {
   background: linear-gradient(135deg, #a8d8ea, #f5e4c3);
@@ -156,4 +161,9 @@ main {
 .dark footer {
   background-color: #2a2a2a;
   color: #ffffff;
+}
+
+.card button {
+  margin: 10px 0; /* Space between buttons */
+  width: 100%; /* Make buttons full width */
 }

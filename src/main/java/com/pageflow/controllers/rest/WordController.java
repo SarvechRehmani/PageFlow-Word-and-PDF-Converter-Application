@@ -40,4 +40,20 @@ public class WordController {
         }
     }
 
+    @PostMapping("/pdf-extra")
+    public ResponseEntity<byte[]> convertWordToPdfExtra(@RequestParam("file") MultipartFile file) {
+        System.out.println("Word to PDF Extra");
+        try {
+            System.out.println(1);
+            byte[] pdfBytes = wordConversionService.convertWordToPdf(file);
+            System.out.println(7);
+            return ResponseEntity.ok()
+                    .header("Content-Disposition", "attachment; filename=\"converted.pdf\"")
+                    .body(pdfBytes);
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(("Error converting file: " + e.getMessage()).getBytes());
+        }
+
+    }
+
 }

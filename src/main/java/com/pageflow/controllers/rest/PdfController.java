@@ -1,6 +1,5 @@
 package com.pageflow.controllers.rest;
 
-import com.pageflow.exceptions.FileSizeExceededException;
 import com.pageflow.services.PdfConversionService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -19,16 +18,13 @@ public class PdfController {
 
     private final PdfConversionService pdfConverterService;
 
-
-
     public PdfController(PdfConversionService pdfConverterService) {
         this.pdfConverterService = pdfConverterService;
 
     }
 
-
     @PostMapping("/word")
-    public ResponseEntity<byte[]> convertPdfToWord(@RequestParam("file") MultipartFile file) throws IOException, FileSizeExceededException {
+    public ResponseEntity<byte[]> convertPdfToWord(@RequestParam("file") MultipartFile file) throws Exception {
         byte[] wordFile = pdfConverterService.convertPdfToWord(file);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Disposition", "attachment; filename=converted.docx");

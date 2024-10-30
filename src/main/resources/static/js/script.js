@@ -79,6 +79,18 @@ async function convertPdfToWord() {
   loader.style.display = "none"; // Hide loader
 }
 
+function optionOne() {
+  window.location.href = "https://www.example.com"; // Replace with your desired link
+}
+
+function optionTwo() {
+  window.location.href = "https://www.example.com"; // Replace with your desired link
+}
+
+function optionThree() {
+  window.location.href = "https://www.example.com"; // Replace with your desired link
+}
+
 // Theme toggle functionality
 const themeToggleButton = document.getElementById("themeToggle");
 themeToggleButton.addEventListener("click", () => {
