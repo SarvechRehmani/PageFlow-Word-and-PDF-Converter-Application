@@ -14,9 +14,9 @@ public class CustomErrorController implements ErrorController {
         Integer statusCode = (Integer) request.getAttribute("jakarta.servlet.error.status_code");
         if (statusCode != null) {
             if (statusCode == 404) {
-                return "404.html";
+                return "errors/404.html";
             }
         }
-        return "genericError.html";
+        return "errors/genericError.html";
     }
 }

@@ -24,14 +24,11 @@ public class WordController {
 
     @PostMapping("/pdf")
     public ResponseEntity<byte[]> convertWordToPdf(@RequestParam("file") MultipartFile file) {
-        System.out.println(1);
         if (file.isEmpty() || !file.getContentType().equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
             return ResponseEntity.badRequest().body("Invalid file type or empty file".getBytes());
         }
-        System.out.println(1);
         try {
             byte[] pdfBytes = wordConversionService.convertWordToPdf(file);
-            System.out.println(7);
             return ResponseEntity.ok()
                     .header("Content-Disposition", "attachment; filename=\"converted.pdf\"")
                     .body(pdfBytes);
@@ -40,20 +37,31 @@ public class WordController {
         }
     }
 
-    @PostMapping("/pdf-extra")
-    public ResponseEntity<byte[]> convertWordToPdfExtra(@RequestParam("file") MultipartFile file) {
-        System.out.println("Word to PDF Extra");
+    @PostMapping("/html")
+    public ResponseEntity<byte[]> convertWordToHTML(@RequestParam("file") MultipartFile file) {
         try {
-            System.out.println(1);
-            byte[] pdfBytes = wordConversionService.convertWordToPdf(file);
-            System.out.println(7);
+            byte[] pdfBytes = wordConversionService.convertWordToHTML(file);
             return ResponseEntity.ok()
-                    .header("Content-Disposition", "attachment; filename=\"converted.pdf\"")
+                    .header("Content-Disposition", "attachment; filename=\"converted.html\"")
                     .body(pdfBytes);
         } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(("Error converting file: " + e.getMessage()).getBytes());
         }
+    }
 
+    @PostMapping("/jpeg")
+    public ResponseEntity<byte[]> convertWordToJPEG(@RequestParam("file") MultipartFile file) {
+        System.out.println("Word to PDF Extra");
+        try {
+            System.out.println(1);
+            byte[] pdfBytes = wordConversionService.convertWordToJPEG(file);
+            System.out.println(7);
+            return ResponseEntity.ok()
+                    .header("Content-Disposition", "attachment; filename=\"converted.jpeg\"")
+                    .body(pdfBytes);
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(("Error converting file: " + e.getMessage()).getBytes());
+        }
     }
 
 }

@@ -21,4 +21,22 @@ public class PdfConversionService {
         return outputStream.toByteArray();
     }
     // ADD MORE METHOD FOR PDF TO ANOTHER EXTENSION CONVERSION
+
+    public byte[] convertPdfToExcel(MultipartFile file) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        // Load the PDF document
+        Document pdfDocument = new Document(file.getInputStream());
+        // Convert PDF to Excel format (Excel)
+        pdfDocument.save(outputStream, SaveFormat.Excel);
+        return outputStream.toByteArray();
+    }
+
+    public byte[] convertPdfToPPT(MultipartFile file) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        // Load the PDF document
+        Document pdfDocument = new Document(file.getInputStream());
+        // Convert PDF to PowerPoint format (PPTX)
+        pdfDocument.save(outputStream, SaveFormat.Pptx);
+        return outputStream.toByteArray();
+    }
 }

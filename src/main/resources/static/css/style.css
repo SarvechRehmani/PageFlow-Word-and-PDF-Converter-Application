@@ -69,7 +69,11 @@ button:hover {
   transform: scale(1.05);
 }
 #downloadButtonWord,
-#downloadButtonPdf {
+#downloadButtonPdf,
+#downloadButtonWordHtml,
+#downloadButtonWordJpeg,
+#downloadButtonPdfExcel,
+#downloadButtonPdfPPT {
   display: none;
   margin-top: 20px;
   background-color: #3498db;
@@ -80,7 +84,11 @@ button:hover {
   transition: all 0.3s ease;
 }
 #downloadButtonWord:hover,
-#downloadButtonPdf:hover {
+#downloadButtonPdf:hover,
+#downloadButtonWordHtml:hover,
+#downloadButtonWordJpeg:hover,
+#downloadButtonPdfExcel:hover,
+#downloadButtonPdfPPT:hover {
   background-color: #2980b9;
 }
 .loader {

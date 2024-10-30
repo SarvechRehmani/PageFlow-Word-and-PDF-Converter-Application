@@ -56,27 +56,55 @@
     </header>
 
     <main>
+      <!-- ROW 1 -->
       <div class="converter-container">
-        <h1><i class="fas fa-file-word"></i> Word to PDF Converter</h1>
-        <div class="loader" id="loaderWord">
+        <h1><i class="fa-brands fa-html5"></i> Word to HTML Converter</h1>
+        <div class="loader" id="loaderWordHtml">
           <i class="fas fa-spinner fa-spin"></i> Converting...
         </div>
-        <h2>Convert Word to PDF</h2>
-        <input type="file" id="wordFile" accept=".doc,.docx" />
-        <button onclick="convertWordToPdf()">CONVERT</button>
-        <a id="downloadButtonWord" href="#">Download Converted PDF</a>
+        <h2>Convert Word to HTML</h2>
+        <input type="file" id="wordToHtmlFile" accept=".doc,.docx" />
+        <button onclick="convertWordToHTML()">CONVERT</button>
+        <a id="downloadButtonWordHtml" href="#">Download Converted HTML</a>
         <p class="note">NOTE: It only convert 7 pages for free</p>
       </div>
 
       <div class="converter-container">
-        <h1><i class="fas fa-file-pdf"></i> PDF to Word Converter</h1>
-        <div class="loader" id="loaderPdf">
+        <h1><i class="fa-solid fa-file-image"></i> Word to JPEG Converter</h1>
+        <div class="loader" id="loaderWordJpeg">
           <i class="fas fa-spinner fa-spin"></i> Converting...
         </div>
-        <h2>Convert PDF to Word</h2>
-        <input type="file" id="pdfFile" accept=".pdf" />
-        <button onclick="convertPdfToWord()">CONVERT</button>
-        <a id="downloadButtonPdf" href="#">Download Converted Word</a>
+        <h2>Convert Word to JPEG</h2>
+        <input type="file" id="wordJpegFile" accept=".doc,.docx" />
+        <button onclick="convertWordToJpeg()">CONVERT</button>
+        <a id="downloadButtonWordJpeg" href="#">Download Converted JPEG</a>
+        <p class="note">NOTE: It only convert 1 pages for free</p>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="converter-container">
+        <h1><i class="fas fa-file-excel"></i> PDF to Excel Converter</h1>
+        <div class="loader" id="loaderPdfExcel">
+          <i class="fas fa-spinner fa-spin"></i> Converting...
+        </div>
+        <h2>Convert PDF to Excel</h2>
+        <input type="file" id="pdfExcelFile" accept=".pdf" />
+        <button onclick="convertPdfToExcel()">CONVERT</button>
+        <a id="downloadButtonPdfExcel" href="#">Download Converted Excel</a>
+        <p class="note">NOTE: It only convert 4 pages for free</p>
+      </div>
+
+      <div class="converter-container">
+        <h1>
+          <i class="fas fa-file-powerpoint"></i> PDF to PowerPoint Converter
+        </h1>
+        <div class="loader" id="loaderPdfPPT">
+          <i class="fas fa-spinner fa-spin"></i> Converting...
+        </div>
+        <h2>Convert PDF to PowerPoint</h2>
+        <input type="file" id="pdfPPTFile" accept=".pdf" />
+        <button onclick="convertPdfToPowerPoint()">CONVERT</button>
+        <a id="downloadButtonPdfPPT" href="#">Download Converted PowerPoint</a>
         <p class="note">NOTE: It only convert 4 pages for free</p>
       </div>
     </main>

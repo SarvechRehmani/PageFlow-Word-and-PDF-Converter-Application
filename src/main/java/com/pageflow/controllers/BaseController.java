@@ -12,4 +12,9 @@ public class BaseController {
         return "index.html";
     }
 
+    @GetMapping("/more")
+    public String more(){
+        return "moreOptions.html";
+    }
+
 }

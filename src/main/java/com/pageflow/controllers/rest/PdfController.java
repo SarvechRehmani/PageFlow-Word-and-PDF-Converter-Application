@@ -31,5 +31,21 @@ public class PdfController {
         return new ResponseEntity<>(wordFile, headers, HttpStatus.OK);
     }
 
+    @PostMapping("/excel")
+    public ResponseEntity<byte[]> convertPdfToExcel(@RequestParam("file") MultipartFile file) throws Exception {
+        byte[] wordFile = pdfConverterService.convertPdfToExcel(file);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", "attachment; filename=converted.xlsx");
+        return new ResponseEntity<>(wordFile, headers, HttpStatus.OK);
+    }
+
+    @PostMapping("/powerpoint")
+    public ResponseEntity<byte[]> convertPdfToPowerPoint(@RequestParam("file") MultipartFile file) throws Exception {
+        byte[] wordFile = pdfConverterService.convertPdfToPPT(file);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", "attachment; filename=converted.pptx");
+        return new ResponseEntity<>(wordFile, headers, HttpStatus.OK);
+    }
+
 
 }

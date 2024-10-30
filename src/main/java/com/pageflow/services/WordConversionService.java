@@ -26,4 +26,32 @@ public class WordConversionService {
         }
     }
     // ADD MORE METHOD FOR WORD TO ANOTHER EXTENSION CONVERSION
+
+    public byte[] convertWordToHTML(MultipartFile file) throws IOException {
+        try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+            // Load the Word document from the input stream
+            Document document = new Document(file.getInputStream());
+
+            // Save the document as HTML to the output stream
+            document.save(outputStream, SaveFormat.HTML);
+
+            return outputStream.toByteArray();
+        } catch (Exception e) {
+            throw new IOException("Error converting Word to HTML", e);
+        }
+    }
+
+    public byte[] convertWordToJPEG(MultipartFile file) throws IOException {
+        try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+            // Load the Word document from the input stream
+            Document document = new Document(file.getInputStream());
+
+            // Save the document as JPEG to the output stream
+            document.save(outputStream, SaveFormat.JPEG);
+
+            return outputStream.toByteArray();
+        } catch (Exception e) {
+            throw new IOException("Error converting Word to JPEG", e);
+        }
+    }
 }
